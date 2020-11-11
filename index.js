@@ -16,6 +16,7 @@ const ElmoYell = new Audio("./Audio-Files/God_Fucking_Damnit.mp3")
 const beyGif = "https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif";
 const welcomeGif = "https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif";
 const pizzaGif = "https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif";
+const ElmoGif = "https://media.giphy.com/media/yr7n0u3qzO9nG/source.gif"
 
 
 // Resolve promise after duration
@@ -27,8 +28,8 @@ ComfyJS.Init(twitchTvHandle);
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
   console.log(`!${command} was typed in chat`);
 
-  if (command == "yo") {
-    new gifAlert(user, beyGif, ElmoYell, command);
+  if (command == "GFDI") {
+    new gifAlert(user, ElmoGif, ElmoYell, command);
   }
 
   // if (command == "welcome") {
