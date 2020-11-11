@@ -8,8 +8,9 @@ const img = new Image();
 const queue = new Queue();
 
 /* Sound Effects */
-const pewAudio = new Audio("horn.wav");
-const magicChime = new Audio("Magic_Chime.mp3");
+const ElmoYell = new Audio("./Audio-Files/God_Fucking_Damnit.mp3")
+// const pewAudio = new Audio("horn.wav");
+// const magicChime = new Audio("Magic_Chime.mp3");
 
 /* GIFs */
 const beyGif = "https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif";
@@ -27,16 +28,16 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   console.log(`!${command} was typed in chat`);
 
   if (command == "yo") {
-    new gifAlert(user, beyGif, pewAudio, command);
+    new gifAlert(user, beyGif, ElmoYell, command);
   }
 
-  if (command == "welcome") {
-    new gifAlert(message, welcomeGif, magicChime, command);
-  }
+  // if (command == "welcome") {
+  //   new gifAlert(message, welcomeGif, magicChime, command);
+  // }
 
-  if (flags.broadcaster && command == "pizza") {
-    new gifAlert(message, pizzaGif, magicChime, command);
-  }
+  // if (flags.broadcaster && command == "pizza") {
+  //   new gifAlert(message, pizzaGif, magicChime, command);
+  // }
 
   if (flags.broadcaster && command == "pause") {
     // Clear GIF queue and pause for PAUSE_DURATION
@@ -50,9 +51,9 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
 };
 
 const generateTitle = {
-  yo: " is hype!",
-  welcome: " needs a welcome!",
-  pizza: " needed a pizza party!",
+  // yo: " is hype!",
+  // welcome: " needs a welcome!",
+  // pizza: " needed a pizza party!",
 };
 
 function gifAlert(user, gif, audio, type) {
