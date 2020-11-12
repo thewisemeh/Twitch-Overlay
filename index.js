@@ -9,14 +9,11 @@ const queue = new Queue();
 
 /* Sound Effects */
 const ElmoYell = new Audio("./Audio-Files/God_Fucking_Damnit.mp3")
-// const pewAudio = new Audio("horn.wav");
-// const magicChime = new Audio("Magic_Chime.mp3");
+const ScottNo = new Audio("./Audio-Files/Michael_Scott_No.mp3")
 
 /* GIFs */
-//const beyGif = "https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif";
-//const welcomeGif = "https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif";
-//const pizzaGif = "https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif";
 const ElmoGif = "https://media.giphy.com/media/yr7n0u3qzO9nG/source.gif"
+const ScottNoGif = "https://media.giphy.com/media/d10dMmzqCYqQ0/source.gif"
 
 
 // Resolve promise after duration
@@ -32,13 +29,9 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     new gifAlert(user, ElmoGif, ElmoYell, command);
   }
 
-  // if (command == "welcome") {
-  //   new gifAlert(message, welcomeGif, magicChime, command);
-  // }
-
-  // if (flags.broadcaster && command == "pizza") {
-  //   new gifAlert(message, pizzaGif, magicChime, command);
-  // }
+  if(command == "no"){
+    new gifAlert(user,ScottNoGif, ScottNo,command);
+  }
 
   if (flags.broadcaster && command == "pause") {
     // Clear GIF queue and pause for PAUSE_DURATION
@@ -52,8 +45,8 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
 };
 
 const generateTitle = {
-  // yo: " is hype!",
-  // welcome: " needs a welcome!",
+  gfdi : " Is RAGE!",
+  No : " Says No!"
   // pizza: " needed a pizza party!",
 };
 
