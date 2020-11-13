@@ -1,5 +1,5 @@
 const twitchTvHandle = "TheWiseMeh";
-const PAUSE_DURATION = 30 * 1000; // 30 seconds
+const PAUSE_DURATION = 600 * 1000; // 600 seconds or 10 mins
 const DISPLAY_DURATION = 10 * 1000; // 10 seconds
 
 /* DOM */
