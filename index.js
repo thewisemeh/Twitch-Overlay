@@ -30,7 +30,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   }
 
   if(command == "no"){
-    new gifAlert(user,ScottNoGif, ScottNo,command);
+    new gifAlert(user, ScottNoGif, ScottNo, command);
   }
 
   if (flags.broadcaster && command == "pause") {
@@ -46,7 +46,7 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
 
 const generateTitle = {
   gfdi : " Is RAGE!",
-  No : " Says No!"
+   no : " Says No!"
   // pizza: " needed a pizza party!",
 };
 
