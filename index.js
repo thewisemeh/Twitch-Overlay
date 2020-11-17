@@ -10,10 +10,14 @@ const queue = new Queue();
 /* Sound Effects */
 const ElmoYell = new Audio("./Audio-Files/God_Fucking_Damnit.mp3")
 const ScottNo = new Audio("./Audio-Files/Michael_Scott_No.mp3")
+const Igotproblems = new Audio("./Audio-Files/Ive_got_a_lot_of_problems_with_you_people.mp3")
+const Festivus = new Audio("./Audio-Files/A_FESTIVUS_for_the_rest_of_US.mp3")
 
 /* GIFs */
 const ElmoGif = "https://media.giphy.com/media/yr7n0u3qzO9nG/source.gif"
 const ScottNoGif = "https://media.giphy.com/media/d10dMmzqCYqQ0/source.gif"
+const Igotalotofproblemsgif = "https://media.giphy.com/media/SSQuHAbavAkmFthVkf/source.gif"
+const Festivusgif = "https://media.giphy.com/media/AhQvSi0Kc0XbrS0B9C/source.gif"
 
 
 // Resolve promise after duration
@@ -33,6 +37,14 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     new gifAlert(user, ScottNoGif, ScottNo, command);
   }
 
+  if(command == "problems"){
+    new gifAlert(user,Igotalotofproblemsgif,Igotproblems, command )
+  }
+
+  if(command == "festivus"){
+    new gifAlert(user, Festivusgif, Festivus, command)
+  }
+
   if (flags.broadcaster && command == "pause") {
     // Clear GIF queue and pause for PAUSE_DURATION
     queue.clear();
@@ -46,7 +58,9 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
 
 const generateTitle = {
   gfdi : " Is RAGE!",
-   no : " Says No!"
+   no : " Says No!",
+   problems : " Has problems with us.",
+   festivus : " fest"
   // pizza: " needed a pizza party!",
 };
 
