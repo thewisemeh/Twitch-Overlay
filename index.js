@@ -8,6 +8,7 @@ var ELMO_COUNTDOWN = 0; // 120 seconds
 var MICHAEL_SCOTT_NO_COUNTDOWN = 0; // 300
 var IGOT_PROBLEMS_COUNTDOWN = 0; //300
 var FESIVUS_COUNTDOWN = 0 // 300
+var HEY_LISTEN_COUNTDOWN = 0 // 120
 
 /* DOM */
 const container = document.querySelector(".alerts");
@@ -32,12 +33,14 @@ const ElmoYell = new Audio("./Audio-Files/God_Fucking_Damnit.mp3")
 const ScottNo = new Audio("./Audio-Files/Michael_Scott_No.mp3")
 const Igotproblems = new Audio("./Audio-Files/Ive_got_a_lot_of_problems_with_you_people.mp3")
 const Festivus = new Audio("./Audio-Files/A_FESTIVUS_for_the_rest_of_US.mp3")
+const HeyListen = new Audio("./Audio-Files/hey_listen.mp3")
 
 /* GIFs */
 const ElmoGif = "https://media.giphy.com/media/yr7n0u3qzO9nG/source.gif"
 const ScottNoGif = "https://media.giphy.com/media/d10dMmzqCYqQ0/source.gif"
 const Igotalotofproblemsgif = "https://media.giphy.com/media/SSQuHAbavAkmFthVkf/source.gif"
 const Festivusgif = "https://media.giphy.com/media/AhQvSi0Kc0XbrS0B9C/source.gif"
+const HeyListenPicture = "./pictures/Hey_Listen_FO4.png"
 
 
 // Resolve promise after duration
@@ -88,6 +91,17 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     else(
       console.log("Festivus is over")
     )
+  }
+
+  if(command == "hey"){
+    if(HEY_LISTEN_COUNTDOWN <= 0){
+      new gifAlert(user, HeyListenPicture, HeyListen, command) 
+      HEY_LISTEN_COUNTDOWN = 120
+    }
+    else{
+      console.log("Finally swatted that bug")
+    }
+
   }
 
   if (flags.broadcaster && command == "pause") {
