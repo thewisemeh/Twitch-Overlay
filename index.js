@@ -25,6 +25,30 @@ let timercountdown = setInterval(() => {
   else {
     ELMO_COUNTDOWN
   }
+  if (MICHAEL_SCOTT_NO_COUNTDOWN > 0) {
+    MICHAEL_SCOTT_NO_COUNTDOWN--
+  }
+  else {
+    MICHAEL_SCOTT_NO_COUNTDOWN
+  }
+  if (IGOT_PROBLEMS_COUNTDOWN > 0) {
+    IGOT_PROBLEMS_COUNTDOWN--
+  }
+  else {
+    IGOT_PROBLEMS_COUNTDOWN
+  }
+  if (FESIVUS_COUNTDOWN > 0) {
+    FESIVUS_COUNTDOWN--
+  }
+  else {
+    FESIVUS_COUNTDOWN
+  }
+  if (HEY_LISTEN_COUNTDOWN > 0) {
+    HEY_LISTEN_COUNTDOWN--
+  }
+  else {
+    HEY_LISTEN_COUNTDOWN
+  }
 }, 1000);
 
 
