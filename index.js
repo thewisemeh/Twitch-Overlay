@@ -1,11 +1,31 @@
 const twitchTvHandle = "TheWiseMeh";
-const PAUSE_DURATION = 600 * 1000; // 600 seconds or 10 mins
-const DISPLAY_DURATION = 10 * 1000; // 10 seconds
+var PAUSE_DURATION = 600 * 1000; // 600 seconds or 10 mins
+var DISPLAY_DURATION = 10 * 1000; // 10 seconds
+var PROBLEMS_DURATION = 6 * 1000;// 6 seconds
+var CURRENT_DISPLAY_DURATION = 0;
+
+var ELMO_COUNTDOWN = 0; // 120 seconds
+var MICHAEL_SCOTT_NO_COUNTDOWN = 0; // 300
+var IGOT_PROBLEMS_COUNTDOWN = 0; //300
+var FESIVUS_COUNTDOWN = 0 // 300
 
 /* DOM */
 const container = document.querySelector(".alerts");
 const img = new Image();
 const queue = new Queue();
+
+
+
+/* Timer to control gifs*/
+let timercountdown = setInterval(() => {
+  if (ELMO_COUNTDOWN > 0) {
+    ELMO_COUNTDOWN--
+  }
+  else {
+    ELMO_COUNTDOWN
+  }
+}, 1000);
+
 
 /* Sound Effects */
 const ElmoYell = new Audio("./Audio-Files/God_Fucking_Damnit.mp3")
@@ -29,20 +49,45 @@ ComfyJS.Init(twitchTvHandle);
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
   console.log(`!${command} was typed in chat`);
 
+
   if (command == "gfdi") {
-    new gifAlert(user, ElmoGif, ElmoYell, command);
+    if (ELMO_COUNTDOWN <= 0) {
+      new gifAlert(user, ElmoGif, ElmoYell, command);
+      ELMO_COUNTDOWN = 120
+    }
+    else {
+      console.log("Elmo needs a lozenge")
+    }
   }
 
-  if(command == "no"){
-    new gifAlert(user, ScottNoGif, ScottNo, command);
+  if (command == "no") {
+    if (MICHAEL_SCOTT_NO_COUNTDOWN <= 0) {
+      new gifAlert(user, ScottNoGif, ScottNo, command);
+      MICHAEL_SCOTT_NO_COUNTDOWN = 300
+    }
+    else (
+      console.log('"I knew exactly what to do. But in a much more real sense, I had no idea what to do."')
+    )
   }
 
-  if(command == "problems"){
-    new gifAlert(user,Igotalotofproblemsgif,Igotproblems, command )
+  if (command == "problems") {
+    if (IGOT_PROBLEMS_COUNTDOWN <= 0) {
+      new gifAlert(user, Igotalotofproblemsgif, Igotproblems, command)
+      IGOT_PROBLEMS_COUNTDOWN = 300
+    }
+    else (
+      console.log("I guess I dont have as many problems as before")
+    )
   }
 
-  if(command == "festivus"){
-    new gifAlert(user, Festivusgif, Festivus, command)
+  if (command == "festivus") {
+    if(FESIVUS_COUNTDOWN <= 0){
+      new gifAlert(user, Festivusgif, Festivus, command)
+      FESIVUS_COUNTDOWN = 300
+    }
+    else(
+      console.log("Festivus is over")
+    )
   }
 
   if (flags.broadcaster && command == "pause") {
@@ -57,11 +102,10 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
 };
 
 const generateTitle = {
-  gfdi : " Is RAGE!",
-   no : " Says No!",
-   problems : " Has problems with us.",
-   festivus : " fest"
-  // pizza: " needed a pizza party!",
+  gfdi: " Is RAGE!",
+  no: " Says No!",
+  problems: " Has problems with us.",
+  festivus: " fest"
 };
 
 function gifAlert(user, gif, audio, type) {
@@ -73,7 +117,11 @@ function gifAlert(user, gif, audio, type) {
     `;
     container.style.opacity = 1;
 
-    await wait(DISPLAY_DURATION);
+    await wait(DISPLAY_DURATION)
+
+    // await wait( ELMO_DURATION);
+
+    // await wait(CURRENT_DISPLAY_DURATION)
 
     if (!queue.isLooping) {
       container.style.opacity = 0;
