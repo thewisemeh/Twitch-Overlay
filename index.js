@@ -80,7 +80,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (command == "gfdi") {
     if (ELMO_COUNTDOWN <= 0) {
       new gifAlert(user, ElmoGif, ElmoYell, command);
-      ELMO_COUNTDOWN = 120
+      //ELMO_COUNTDOWN = 120
     }
     else {
       console.log("Elmo needs a lozenge")
@@ -90,7 +90,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (command == "no") {
     if (MICHAEL_SCOTT_NO_COUNTDOWN <= 0) {
       new gifAlert(user, ScottNoGif, ScottNo, command);
-      MICHAEL_SCOTT_NO_COUNTDOWN = 300
+      //MICHAEL_SCOTT_NO_COUNTDOWN = 300
     }
     else (
       console.log('"I knew exactly what to do. But in a much more real sense, I had no idea what to do."')
@@ -100,7 +100,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (command == "problems") {
     if (IGOT_PROBLEMS_COUNTDOWN <= 0) {
       new gifAlert(user, Igotalotofproblemsgif, Igotproblems, command)
-      IGOT_PROBLEMS_COUNTDOWN = 300
+      //IGOT_PROBLEMS_COUNTDOWN = 300
     }
     else (
       console.log("I guess I dont have as many problems as before")
@@ -110,7 +110,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (command == "festivus") {
     if(FESIVUS_COUNTDOWN <= 0){
       new gifAlert(user, Festivusgif, Festivus, command)
-      FESIVUS_COUNTDOWN = 300
+      //FESIVUS_COUNTDOWN = 300
     }
     else(
       console.log("Festivus is over")
@@ -120,7 +120,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if(command == "hey"){
     if(HEY_LISTEN_COUNTDOWN <= 0){
       new gifAlert(user, HeyListenPicture, HeyListen, command) 
-      HEY_LISTEN_COUNTDOWN = 120
+      //HEY_LISTEN_COUNTDOWN = 120
     }
     else{
       console.log("Finally swatted that bug")
@@ -143,7 +143,8 @@ const generateTitle = {
   gfdi: " Is RAGE!",
   no: " Says No!",
   problems: " Has problems with us.",
-  festivus: " fest"
+  festivus: " fest",
+  hey : " Needs you to listen"
 };
 
 function gifAlert(user, gif, audio, type) {
