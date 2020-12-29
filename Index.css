@@ -73,7 +73,12 @@ img {
   letter-spacing: 0.4rem;
 } 
 
+.content {
+  display: flex;
+  align-content: center;
+  justify-content: start;
 
+}
 
 
 .fade-in {
