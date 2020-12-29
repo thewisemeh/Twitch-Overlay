@@ -109,8 +109,8 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     // )
   }
 
-  // if (command == "festivus") {
-    if(FESIVUS_COUNTDOWN <= 0){
+   if (command == "festivus") {
+    // if(FESIVUS_COUNTDOWN <= 0){
       new gifAlert(user, Festivusgif, Festivus, command)
       //FESIVUS_COUNTDOWN = 300
     // }
