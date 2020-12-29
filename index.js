@@ -59,12 +59,14 @@ const Igotproblems = new Audio("./Audio-Files/Ive_got_a_lot_of_problems_with_you
 const Festivus = new Audio("./Audio-Files/A_FESTIVUS_for_the_rest_of_US.mp3")
 const HeyListen = new Audio("./Audio-Files/hey_listen.mp3")
 
+
+
 /* GIFs */
 const ElmoGif = "https://media.giphy.com/media/yr7n0u3qzO9nG/source.gif"
 const ScottNoGif = "https://media.giphy.com/media/d10dMmzqCYqQ0/source.gif"
 const Igotalotofproblemsgif = "https://media.giphy.com/media/SSQuHAbavAkmFthVkf/source.gif"
 const Festivusgif = "https://media.giphy.com/media/AhQvSi0Kc0XbrS0B9C/source.gif"
-const HeyListenPicture = "./pictures/Hey_Listen_FO4.png"
+const HeyListenPicture = "./Pictures/Hey_Listen_FO4.png"
 
 
 // Resolve promise after duration
