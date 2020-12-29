@@ -80,13 +80,13 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 
 
   if (command == "gfdi") {
-    if (ELMO_COUNTDOWN <= 0) {
+    // if (ELMO_COUNTDOWN <= 0) {
       new gifAlert(user, ElmoGif, ElmoYell, command);
       //ELMO_COUNTDOWN = 120
-    }
-    else {
-      console.log("Elmo needs a lozenge")
-    }
+    // }
+    // else {
+    //   console.log("Elmo needs a lozenge")
+    // }
   }
 
   if (command == "no") {
