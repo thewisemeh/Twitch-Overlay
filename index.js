@@ -160,10 +160,6 @@ function gifAlert(user, gif, audio, type) {
 
     await wait(DISPLAY_DURATION)
 
-    // await wait( ELMO_DURATION);
-
-    // await wait(CURRENT_DISPLAY_DURATION)
-
     if (!queue.isLooping) {
       container.style.opacity = 0;
     }
