@@ -53,11 +53,11 @@ const queue = new Queue();
 
 
 /* Sound Effects */
-const ElmoYell = new Audio("./Audio-Files/God_Fucking_Damnit.mp3")
-const ScottNo = new Audio("./Audio-Files/Michael_Scott_No.mp3")
-const Igotproblems = new Audio("./Audio-Files/Ive_got_a_lot_of_problems_with_you_people.mp3")
-const Festivus = new Audio("./Audio-Files/A_FESTIVUS_for_the_rest_of_US.mp3")
-const HeyListen = new Audio("./Audio-Files/hey_listen.mp3")
+const ElmoYell = new Audio("Audio-Files/God_Fucking_Damnit.mp3")
+const ScottNo = new Audio("Audio-Files/Michael_Scott_No.mp3")
+const Igotproblems = new Audio("Audio-Files/Ive_got_a_lot_of_problems_with_you_people.mp3")
+const Festivus = new Audio("Audio-Files/A_FESTIVUS_for_the_rest_of_US.mp3")
+const HeyListen = new Audio("Audio-Files/hey_listen.mp3")
 
 
 
