@@ -1,14 +1,14 @@
 const twitchTvHandle = "TheWiseMeh";
 var PAUSE_DURATION = 60 * 1000; // 60 seconds or 1 min
 var DISPLAY_DURATION = 10 * 1000; // 10 seconds
-// var PROBLEMS_DURATION = 6 * 1000;// 6 seconds
-// var CURRENT_DISPLAY_DURATION = 0;
+var PROBLEMS_DURATION = 6 * 1000;// 6 seconds
+var CURRENT_DISPLAY_DURATION = 0;
 
-// var ELMO_COUNTDOWN = 0; // 120 seconds
-// var MICHAEL_SCOTT_NO_COUNTDOWN = 0; // 300
-// var IGOT_PROBLEMS_COUNTDOWN = 0; //300
-// var FESIVUS_COUNTDOWN = 0 // 300
-// var HEY_LISTEN_COUNTDOWN = 0 // 120
+var ELMO_COUNTDOWN = 0; // 120 seconds
+var MICHAEL_SCOTT_NO_COUNTDOWN = 0; // 300
+var IGOT_PROBLEMS_COUNTDOWN = 0; //300
+var FESIVUS_COUNTDOWN = 0 // 300
+var HEY_LISTEN_COUNTDOWN = 0 // 120
 
 /* DOM */
 const container = document.querySelector(".alerts");
@@ -18,38 +18,38 @@ const queue = new Queue();
 
 
 /* Timer to control gifs*/
-// let timercountdown = setInterval(() => {
-//   if (ELMO_COUNTDOWN > 0) {
-//     ELMO_COUNTDOWN--
-//   }
-//   else {
-//     ELMO_COUNTDOWN
-//   }
-//   if (MICHAEL_SCOTT_NO_COUNTDOWN > 0) {
-//     MICHAEL_SCOTT_NO_COUNTDOWN--
-//   }
-//   else {
-//     MICHAEL_SCOTT_NO_COUNTDOWN
-//   }
-//   if (IGOT_PROBLEMS_COUNTDOWN > 0) {
-//     IGOT_PROBLEMS_COUNTDOWN--
-//   }
-//   else {
-//     IGOT_PROBLEMS_COUNTDOWN
-//   }
-//   if (FESIVUS_COUNTDOWN > 0) {
-//     FESIVUS_COUNTDOWN--
-//   }
-//   else {
-//     FESIVUS_COUNTDOWN
-//   }
-//   if (HEY_LISTEN_COUNTDOWN > 0) {
-//     HEY_LISTEN_COUNTDOWN--
-//   }
-//   else {
-//     HEY_LISTEN_COUNTDOWN
-//   }
-// }, 1000);
+let timercountdown = setInterval(() => {
+  if (ELMO_COUNTDOWN > 0) {
+    ELMO_COUNTDOWN--
+  }
+  else {
+    ELMO_COUNTDOWN
+  }
+  if (MICHAEL_SCOTT_NO_COUNTDOWN > 0) {
+    MICHAEL_SCOTT_NO_COUNTDOWN--
+  }
+  else {
+    MICHAEL_SCOTT_NO_COUNTDOWN
+  }
+  if (IGOT_PROBLEMS_COUNTDOWN > 0) {
+    IGOT_PROBLEMS_COUNTDOWN--
+  }
+  else {
+    IGOT_PROBLEMS_COUNTDOWN
+  }
+  if (FESIVUS_COUNTDOWN > 0) {
+    FESIVUS_COUNTDOWN--
+  }
+  else {
+    FESIVUS_COUNTDOWN
+  }
+  if (HEY_LISTEN_COUNTDOWN > 0) {
+    HEY_LISTEN_COUNTDOWN--
+  }
+  else {
+    HEY_LISTEN_COUNTDOWN
+  }
+}, 1000);
 
 
 /* Sound Effects */
@@ -80,23 +80,54 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 
 
   if (command == "gfdi") {
+    if (ELMO_COUNTDOWN <= 0) {
       new gifAlert(user, ElmoGif, ElmoYell, command);
+      ELMO_COUNTDOWN = 120
+    }
+    else {
+      console.log("Elmo needs a lozenge")
+    }
   }
 
   if (command == "no") {
+    if (MICHAEL_SCOTT_NO_COUNTDOWN <= 0) {
       new gifAlert(user, ScottNoGif, ScottNo, command);
+      MICHAEL_SCOTT_NO_COUNTDOWN = 300
+    }
+    else (
+      console.log('"I knew exactly what to do. But in a much more real sense, I had no idea what to do."')
+    )
   }
 
   if (command == "problems") {
+    if (IGOT_PROBLEMS_COUNTDOWN <= 0) {
       new gifAlert(user, Igotalotofproblemsgif, Igotproblems, command)
+      IGOT_PROBLEMS_COUNTDOWN = 300
+    }
+    else (
+      console.log("I guess I dont have as many problems as before")
+    )
   }
 
    if (command == "festivus") {
+    if(FESIVUS_COUNTDOWN <= 0){
       new gifAlert(user, Festivusgif, Festivus, command)
+      FESIVUS_COUNTDOWN = 300
+    }
+    else(
+      console.log("Festivus is over")
+    )
   }
 
   if(command == "hey"){
+    if(HEY_LISTEN_COUNTDOWN <= 0){
       new gifAlert(user, HeyListenPicture, HeyListen, command) 
+      HEY_LISTEN_COUNTDOWN = 120
+    }
+    else{
+      console.log("Finally swatted that bug")
+    }
+
   }
 
   if (flags.broadcaster && command == "pause") {
