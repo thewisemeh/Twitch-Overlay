@@ -1,8 +1,7 @@
 body {
   font-family: canada-type-gibson, sans-serif;
-  font-size: .5rem;
   font-weight: 150;
-  font-size: .50rem;
+  font-size: .5rem;
   display: grid;
   flex-direction: column;
   justify-content: center;
