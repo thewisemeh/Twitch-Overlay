@@ -1,7 +1,7 @@
 body {
   font-family: canada-type-gibson, sans-serif;
   font-weight: 150;
-  font-size: .5rem;
+  font-size: .1rem;
   display: grid;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,7 @@ img {
   margin: 0;
   color: #010368;
   /* animation: shadows 1.5s ease-in infinite, move 1.5s ease-in infinite; */
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
 }
 
 
