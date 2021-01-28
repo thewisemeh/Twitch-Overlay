@@ -1,7 +1,7 @@
 body {
   font-family: canada-type-gibson, sans-serif;
   font-size: .5rem;
-  font-weight: 300;
+  font-weight: 150;
   font-size: 1.25rem;
   display: grid;
   flex-direction: column;
@@ -17,7 +17,7 @@ img {
 .alerts {
   display: grid;
   justify-content: center;
-  width: 520px;
+  width: 1040px;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ img {
     9px 9px #abb839, 12px 12px 0 #abb839;
   font-family: bungee, sans-serif;
   font-size: calc(.25rem + 5vw);
-  font-weight: 400;
+  font-weight: 200;
   text-transform: uppercase;
   text-align: center;
   margin: 0;
