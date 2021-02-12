@@ -1,21 +1,212 @@
 <html>
 
 <head>
+  <style>
+    .grid-container {
+      position: absolute;
+      top: 200px;
+      width: 800px;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 80px 450px;
+      gap: 5px;
+      padding: 5px;
+
+    }
+
+    .grid-container>div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 10px 0;
+      font-size: 30px;
+      /* background-color: blueviolet; */
+    }
+
+    body {
+      font-family: canada-type-gibson, sans-serif;
+      /* font-weight: 150; */
+      font-size: 10px;
+      /* display: grid; */
+      /* flex-direction: column;
+      justify-content: center; */
+      /* overflow: hidden; */
+    }
+
+    .text-shadows {
+      text-shadow: 3px 3px 0 #130081, 6px 6px 0 #1a00ac,
+        8px 8px #5a6401;
+      /* 11px 11px 0 #abb839;
+      text-shadow: ; */
+      font-family: bungee, sans-serif;
+      /* font-size: calc(.05rem + 2.5vw); */
+      font-size: 40px;
+      /* font-weight: 100; */
+      text-transform: uppercase;
+      text-align: left;
+      margin: 0;
+      color: #9db6ed;
+      animation: shadows 1.5s ease-in infinite, move 1.5s ease-in infinite;
+      letter-spacing: 0.25rem;
+    }
+
+    .fade-in {
+      animation: fadeIn ease 6s;
+      -webkit-animation: fadeIn ease 6s;
+      -moz-animation: fadeIn ease 6s;
+      -o-animation: fadeIn ease 6s;
+      -ms-animation: fadeIn ease 6s;
+    }
+
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-o-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-ms-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes shadows {
+      0% {
+        text-shadow: none;
+      }
+
+      10% {
+        text-shadow: 3px 3px 0 #130081;
+      }
+
+      20% {
+        text-shadow: 3px 3px 0 #130081,
+          6px 6px 0 #f28b7d;
+      }
+
+      30% {
+        text-shadow: 3px 3px 0 #130081,
+          6px 6px 0 #f28b7d, 9px 9px #f07a6a;
+      }
+
+      40% {
+        text-shadow: 3px 3px 0 #130081,
+          6px 6px 0 #f28b7d, 9px 9px #f07a6a,
+          12px 12px 0 #ee6352;
+      }
+
+      50% {
+        text-shadow: 3px 3px 0 #130081,
+          6px 6px 0 #f28b7d, 9px 9px #f07a6a,
+          12px 12px 0 #ee6352;
+      }
+
+      60% {
+        text-shadow: 3px 3px 0 #130081,
+          6px 6px 0 #f28b7d, 9px 9px #f07a6a,
+          12px 12px 0 #ee6352;
+      }
+
+      70% {
+        text-shadow: 3px 3px 0 #130081,
+          6px 6px 0 #f28b7d, 9px 9px #f07a6a;
+      }
+
+      80% {
+        text-shadow: 3px 3px 0 #130081,
+          6px 6px 0 #f28b7d;
+      }
+
+      90% {
+        text-shadow: 3px 3px 0 #130081;
+      }
+
+      100% {
+        text-shadow: none;
+      }
+    }
+
+    @keyframes move {
+      0% {
+        transform: translate(0px, 0px);
+      }
+
+      40% {
+        transform: translate(-12px, -12px);
+      }
+
+      50% {
+        transform: translate(-12px, -12px);
+      }
+
+      60% {
+        transform: translate(-12px, -12px);
+      }
+
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+  </style>
   <script>
-
-
   </script>
   <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
-  <link rel="stylesheet" href="./Index.css" type="text/css">
+  <!-- <link rel="stylesheet" href="./Index.css" type="text/css"> -->
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
-<body background="./Pictures/FWM_Overlay.png"><!--background="./Pictures/FWM_Overlay.png"-->
+<body background="./Pictures/FWM_Overlay.png">
+  <!--background="./Pictures/FWM_Overlay.png"-->
   <div class="alerts" id="content"></div>
+  <div id='divcontainer' class='grid-container'>
+    <!-- <div id='div1'></div>
+    <div id='div2'></div> -->
+  </div>
   <audio style="display: none;" controls muted="muted" autoplay></audio>
   <script src="./queue.js"></script>
   <script src="./index.js"></script>
+  <!-- <p class="text-shadows"> This is a random string of words for testing</p> -->
+
 </body>
+
 </html>
 
 

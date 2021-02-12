@@ -12,7 +12,8 @@ var HEY_LISTEN_COUNTDOWN = 0 // 120
 var HI_GREETING_COUNTDOWN = 0
 
 /* DOM */
-const container = document.querySelector(".alerts");
+// const container = document.querySelector(".alerts");
+const documentdiv = document.getElementById('divcontainer')
 const img = new Image();
 const queue = new Queue();
 
@@ -212,16 +213,16 @@ const generateTitle = {
 function gifAlert(user, gif, audio, type) {
   queue.add(async () => {
     audio.play();
-    container.innerHTML = `
-      <h1 class="text-shadows">${user + generateTitle[type]}</h1>
-      <img src="${gif}" />
-    `;
-    container.style.opacity = 1;
+    documentdiv.innerHTML = `<div id='div1'class="text-shadows">${user + generateTitle[type]}</div>
+    <div id='div2'><img src="${gif}" /></div>`;
+    // container.style.opacity = 1;
+    documentdiv.style.opacity = 1;
 
     await wait(DISPLAY_DURATION)
 
     if (!queue.isLooping) {
-      container.style.opacity = 0;
+      // container.style.opacity = 0;
+      documentdiv.style.opacity = 0;
     }
 
   });
