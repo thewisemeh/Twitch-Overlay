@@ -200,9 +200,9 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
       new gifAlert(user, yourenewgif, yourenewaudio, command)
       YOURE_NEW_COUNTDOWN = 300
     }
-    else (
+    else {
       console.log("You're no longer new")
-    )
+    }
   }
 
   if (flags.broadcaster && command == "pause") {
