@@ -11,6 +11,7 @@ var FESIVUS_COUNTDOWN = 0 // 300
 var HEY_LISTEN_COUNTDOWN = 0 // 120
 var HI_GREETING_COUNTDOWN = 0
 var YOURE_NEW_COUNTDOWN = 0
+var DMG_COUNTDOWN = 0
 
 /* DOM */
 // const container = document.querySelector(".alerts");
@@ -58,6 +59,13 @@ let timercountdown = setInterval(() => {
   else {
     HI_GREETING_COUNTDOWN
   }
+
+  if (DMG_COUNTDOWN > 0) {
+    DMG_COUNTDOWN--
+  }
+  else {
+    DMG_COUNTDOWN
+  }
 }, 1000);
 
 
@@ -69,6 +77,7 @@ const Festivus = new Audio("Audio-Files/A_FESTIVUS_for_the_rest_of_US.mp3")
 const HeyListen = new Audio("Audio-Files/hey_listen.mp3")
 const hiaduio = new Audio("")
 const yourenewaudio = new Audio("Audio-Files/Peri_-_Oh_GOSH_youre_new_v1.mp3")
+const dmgaudio = new Audio("Audio-Files/Emotional_Damage.mp3")
 //Audio-Files\Peri_-_Oh_GOSH_youre_new_v1.mp4
 
 
@@ -92,6 +101,7 @@ const hi9 = "https://media.giphy.com/media/ifxLK48cnyDDi/source.gif"
 const hi10 = "https://media.giphy.com/media/xT0BKpqAaJczduXXJ6/source.gif"
 const hi11 = "https://giphy.com/gifs/hello-adam-demamp-television-6yU7IF9L3950A"    //to here I hate david
 const yourenewgif = "https://media.tenor.com/images/fe75a808e6aaa030a92f2566be089b2f/tenor.gif"
+const dmg = "https://tenor.com/view/steven-he-emotional-damage-steven-he-emotional-damage-gif-23428142"
 //yes i know this could had been done a different way, but this is the way it is.....
 
 
@@ -205,6 +215,16 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     }
   }
 
+  if (command == "dmg") {
+    if (DMG_COUNTDOWN <= 0) {
+      new gifAlert(user, dmg, dmgaudio, command)
+      DMG_COUNTDOWN = 300
+    }
+    else {
+      console.log("I guess it wasn't that much dmg")
+    }
+  }
+
   if (flags.broadcaster && command == "pause") {
     // Clear GIF queue and pause for PAUSE_DURATION
     queue.clear();
@@ -223,7 +243,8 @@ const generateTitle = {
   festivus: " fest",
   hey: " Needs you to listen",
   hi: " just wanted to say hi",
-  new: " you're new"
+  new: " you're new",
+  dmg: " caused some damege "
 };
 
 function gifAlert(user, gif, audio, type) {
