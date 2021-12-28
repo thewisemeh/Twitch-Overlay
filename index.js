@@ -101,7 +101,7 @@ const hi9 = "https://media.giphy.com/media/ifxLK48cnyDDi/source.gif"
 const hi10 = "https://media.giphy.com/media/xT0BKpqAaJczduXXJ6/source.gif"
 const hi11 = "https://giphy.com/gifs/hello-adam-demamp-television-6yU7IF9L3950A"    //to here I hate david
 const yourenewgif = "https://media.tenor.com/images/fe75a808e6aaa030a92f2566be089b2f/tenor.gif"
-const dmg = "https://tenor.com/view/steven-he-emotional-damage-steven-he-emotional-damage-gif-23428142"
+const dmg = "https://c.tenor.com/DJzXAnJQHm8AAAAC/steven-he-emotional-damage-steven-he.gif"
 //yes i know this could had been done a different way, but this is the way it is.....
 
 
